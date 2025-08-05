@@ -1,0 +1,110 @@
+/* --- การตั้งค่าทั่วไปและฟอนต์ --- */
+body {
+    font-family: 'Sarabun', sans-serif;
+    background: linear-gradient(to right, #e2e2e2, #f4f7f6);
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+header {
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    color: #005A9C;
+}
+
+/* --- สไตล์ของปุ่มที่เปิด/ปิดได้ (Collapsible) --- */
+.collapsible {
+    background-color: #005A9C;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    font-family: 'Sarabun', sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 10px;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.collapsible:after {
+    content: '\002B'; /* Unicode for plus sign */
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease-out;
+}
+
+.collapsible.active:after {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.collapsible:hover, .collapsible.active {
+    background-color: #003F6E;
+}
+
+/* --- สไตล์ของเนื้อหาที่จะซ่อน (Content) --- */
+.content {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* --- ส่วนของ Scroll Animation --- */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* เพิ่มท้ายไฟล์ style.css */
+.button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #005A9C;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button-link:hover {
+    background-color: #003F6E;
+}
